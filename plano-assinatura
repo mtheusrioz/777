@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Novo Todo Ano - Por Apenas R$64,75/mês</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .8;
+            }
+        }
+
+        /* Glassmorphism effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card-strong {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Gradient border effect */
+        .gradient-border {
+            position: relative;
+            background: #0F0F0F;
+            border-radius: 16px;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(221, 132, 72, 0.3), rgba(255, 255, 255, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Accent color */
+        .accent-color {
+            color: #dd8448;
+        }
+
+        .accent-bg {
+            background-color: #dd8448;
+        }
+
+        /* Section backgrounds */
+        .section-dark {
+            background: #0F0F0F;
+        }
+
+        .section-black {
+            background: #000;
+        }
+
+        /* Button styles */
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(221, 132, 72, 0.5);
+            color: #dd8448;
+        }
+
+        .btn-accent {
+            background: #dd8448;
+            color: #000;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-accent:hover {
+            background: #c9753a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(221, 132, 72, 0.3);
+        }
+
+        /* Logo styles */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+        }
+
+        .logo-container img {
+            max-width: 150px;
+            height: auto;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <section class="section-black py-20 md:py-32 fade-in relative overflow-hidden">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="imgs/a v.gif" alt="Logo" onerror="this.src='imgs/a v.GIF'; this.onerror=null;">
+        </div>
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-600 to-transparent blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-orange-600 to-transparent blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
+            <div class="text-center slide-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">
+                    Seu site renovado todo ano<br>
+                    <span class="accent-color">por apenas R$64,75/mês</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto" style="font-weight: 300;">
+                    Transforme sua presença digital com um site profissional renovado anualmente. 
+                    Inclui manutenção completa, suporte prioritário e hospedagem otimizada. 
+                    O investimento mais inteligente para seu negócio online.
+                </p>
+                <a href="#cta" class="btn-accent text-lg hover-scale">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Quero meu site agora
+                </a>
+                <p class="mt-4 text-gray-400 text-sm" style="font-weight: 300;">
+                    <i class="fas fa-check-circle mr-2 accent-color"></i>
+                    Sem compromisso • Cancele quando quiser
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Comparação -->
+    <section class="section-dark py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 slide-up" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                Por que escolher nosso plano?
+            </h2>
+            <p class="text-center text-gray-400 mb-12 text-lg" style="font-weight: 300;">
+                Veja a diferença entre o modelo tradicional e nossa solução completa
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Mercado Tradicional -->
+                <div class="glass-card rounded-xl p-8 slide-up gradient-border">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-times-circle text-red-500 text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2" style="font-weight: 600;">Mercado Tradicional</h3>
+                    </div>
+                    <ul class="space-y-4 text-gray-300" style="font-weight: 300;">
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span><strong class="text-white">R$ 1.500+</strong> por site único</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>Manutenção anual: <strong class="text-white">R$ 500-1.000</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>Refação/atualização: <strong class="text-white">R$ 800-1.500</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>Suporte limitado ou cobrado separadamente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>Design desatualizado em poucos meses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>Hospedagem não incluída (R$ 200-400/ano)</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <p class="text-center text-xl font-bold">
+                            Total anual: <span class="text-2xl text-red-400">R$ 2.800+</span>
+                        </p>
+                        <p class="text-center text-sm text-gray-500 mt-2" style="font-weight: 300;">
+                            Sem renovações ou atualizações
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nosso Plano -->
+                <div class="glass-card-strong rounded-xl p-8 shadow-xl slide-up gradient-border relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 accent-bg text-black px-6 py-2 rounded-full text-sm font-bold">
+                        MELHOR OPÇÃO
+                    </div>
+                    <div class="text-center mb-6">
+                        <i class="fas fa-check-circle accent-color text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2" style="font-weight: 600;">Nosso Plano</h3>
+                    </div>
+                    <ul class="space-y-4 text-gray-300" style="font-weight: 300;">
+                        <li class="flex items-start">
+                            <i class="fas fa-check accent-color mr-3 mt-1"></i>
+                            <span><strong class="text-white">R$ 777/ano</strong> ou R$ 64,75/mês</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check accent-color mr-3 mt-1"></i>
+                            <span><strong class="text-white">Novo site todo ano</strong> incluído</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check accent-color mr-3 mt-1"></i>
+                            <span><strong class="text-white">Manutenção completa</strong> inclusa</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check accent-color mr-3 mt-1"></i>
+                            <span><strong class="text-white">Suporte prioritário</strong> sempre</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check accent-color mr-3 mt-1"></i>
+                            <span>Design sempre atualizado e moderno</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check accent-color mr-3 mt-1"></i>
+                            <span>Hospedagem premium incluída</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check accent-color mr-3 mt-1"></i>
+                            <span>SSL e segurança garantidos</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <p class="text-center text-xl font-bold">
+                            Total anual: <span class="text-2xl accent-color">R$ 777</span>
+                        </p>
+                        <p class="text-center text-sm text-gray-400 mt-2" style="font-weight: 300;">
+                            Economia de mais de R$ 2.000/ano
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Benefícios -->
+    <section class="section-black py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 slide-up" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                Tudo que você precisa está incluído
+            </h2>
+            <p class="text-center text-gray-400 mb-12 text-lg" style="font-weight: 300;">
+                Um pacote completo e profissional para manter seu negócio sempre online, atualizado e competitivo no mercado digital
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefício 1 -->
+                <div class="glass-card rounded-xl p-8 hover-scale slide-up gradient-border">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto glass-card-strong">
+                        <i class="fas fa-sync-alt accent-color text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3" style="font-weight: 600;">Novo Site Todo Ano</h3>
+                    <p class="text-gray-400 text-center" style="font-weight: 300;">
+                        A cada 12 meses, você recebe um site completamente novo, desenvolvido do zero com as últimas tendências de design, tecnologias modernas e otimizações de performance. Seu negócio sempre à frente.
+                    </p>
+                </div>
+
+                <!-- Benefício 2 -->
+                <div class="glass-card rounded-xl p-8 hover-scale slide-up gradient-border">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto glass-card-strong">
+                        <i class="fas fa-tools accent-color text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3" style="font-weight: 600;">Manutenção Completa</h3>
+                    <p class="text-gray-400 text-center" style="font-weight: 300;">
+                        Correções de bugs, atualizações de segurança, backups automáticos e ajustes técnicos sempre incluídos. Seu site sempre funcionando perfeitamente, sem custos extras.
+                    </p>
+                </div>
+
+                <!-- Benefício 3 -->
+                <div class="glass-card rounded-xl p-8 hover-scale slide-up gradient-border">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto glass-card-strong">
+                        <i class="fas fa-headset accent-color text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3" style="font-weight: 600;">Suporte Prioritário</h3>
+                    <p class="text-gray-400 text-center" style="font-weight: 300;">
+                        Atendimento rápido e dedicado via WhatsApp, email ou chat. Suas dúvidas e necessidades são tratadas com prioridade máxima. Respostas em até 4 horas úteis.
+                    </p>
+                </div>
+
+                <!-- Benefício 4 -->
+                <div class="glass-card rounded-xl p-8 hover-scale slide-up gradient-border">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto glass-card-strong">
+                        <i class="fas fa-server accent-color text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3" style="font-weight: 600;">Hospedagem Premium</h3>
+                    <p class="text-gray-400 text-center" style="font-weight: 300;">
+                        Hospedagem de alta performance com CDN global, SSL gratuito e certificado de segurança. Garantia de 99,9% de uptime e velocidade otimizada para melhor ranqueamento no Google.
+                    </p>
+                </div>
+
+                <!-- Benefício 5 -->
+                <div class="glass-card rounded-xl p-8 hover-scale slide-up gradient-border">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto glass-card-strong">
+                        <i class="fas fa-palette accent-color text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3" style="font-weight: 600;">Design Moderno e Responsivo</h3>
+                    <p class="text-gray-400 text-center" style="font-weight: 300;">
+                        Seu site sempre com visual moderno, profissional e totalmente responsivo. Seguimos as melhores práticas de UX/UI, garantindo excelente experiência em desktop, tablet e mobile.
+                    </p>
+                </div>
+
+                <!-- Benefício 6 -->
+                <div class="glass-card rounded-xl p-8 hover-scale slide-up gradient-border">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto glass-card-strong">
+                        <i class="fas fa-shield-alt accent-color text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3" style="font-weight: 600;">Garantia Total</h3>
+                    <p class="text-gray-400 text-center" style="font-weight: 300;">
+                        Garantia de satisfação de 30 dias. Se não ficar 100% satisfeito, devolvemos seu dinheiro. Trabalhamos até você ficar completamente satisfeito. Seu sucesso é nosso compromisso.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Programa de Indicações -->
+    <section class="section-dark py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+            <div class="glass-card-strong rounded-2xl p-8 md:p-12 shadow-2xl slide-up relative overflow-hidden">
+                <div class="absolute inset-0 opacity-5">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-orange-600 to-transparent blur-3xl"></div>
+                </div>
+                <div class="relative z-10">
+                    <div class="text-center mb-8">
+                        <div class="inline-block accent-bg text-black px-4 py-2 rounded-full text-sm font-bold mb-4 pulse-animation">
+                            PROGRAMA EXCLUSIVO
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">
+                            Programa de Indicações Real
+                        </h2>
+                        <p class="text-xl text-gray-300 max-w-2xl mx-auto" style="font-weight: 300;">
+                            Ganhe <strong class="accent-color">R$ 10 de desconto mensal</strong> por cada cliente ativo que você indicar
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="glass-card rounded-xl p-6">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold mb-2">1</div>
+                                <div class="text-lg mb-2 text-gray-300" style="font-weight: 300;">Indicação</div>
+                                <div class="text-2xl font-bold accent-color">R$ 54,75/mês</div>
+                                <div class="text-sm text-gray-400 mt-1" style="font-weight: 300;">Economia de R$ 10</div>
+                            </div>
+                        </div>
+                        <div class="glass-card rounded-xl p-6">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold mb-2">3</div>
+                                <div class="text-lg mb-2 text-gray-300" style="font-weight: 300;">Indicações</div>
+                                <div class="text-2xl font-bold accent-color">R$ 34,75/mês</div>
+                                <div class="text-sm text-gray-400 mt-1" style="font-weight: 300;">Economia de R$ 30</div>
+                            </div>
+                        </div>
+                        <div class="accent-bg text-black rounded-xl p-6 shadow-xl border-2 border-gray-800">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold mb-2">6+</div>
+                                <div class="text-lg mb-2" style="font-weight: 300;">Indicações</div>
+                                <div class="text-2xl font-bold">R$ 4,75/mês</div>
+                                <div class="text-sm mt-1 font-semibold">Economia máxima!</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-6">
+                        <div class="flex items-start md:items-center">
+                            <div class="accent-bg text-black rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-lightbulb text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2" style="font-weight: 600;">Como funciona o programa?</h3>
+                                <p class="text-gray-300" style="font-weight: 300;">
+                                    Cada pessoa que você indicar e que se tornar cliente ativo gera um desconto permanente de <strong class="accent-color">R$ 10/mês</strong> na sua mensalidade. 
+                                    O desconto é cumulativo e permanente enquanto o indicado permanecer como cliente. Com 6 indicações ativas, você paga apenas <strong class="accent-color">R$ 4,75 por mês</strong> — algo revolucionário no mercado brasileiro! 
+                                    Quanto mais você indica, menos você paga. Sem limites de indicações. Simples, transparente e justo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Final CTA -->
+    <section id="cta" class="section-black py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-1/2 w-96 h-96 bg-gradient-to-br from-orange-600 to-transparent blur-3xl transform -translate-x-1/2"></div>
+            <div class="absolute bottom-0 right-1/2 w-96 h-96 bg-gradient-to-tl from-orange-600 to-transparent blur-3xl transform translate-x-1/2"></div>
+        </div>
+        <div class="container mx-auto px-4 md:px-8 max-w-4xl text-center slide-up relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">
+                Transforme sua presença digital<br>
+                com o melhor custo-benefício do mercado
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 text-gray-300" style="font-weight: 300;">
+                Site profissional renovado anualmente, manutenção completa, suporte prioritário e a possibilidade de pagar quase nada com indicações. O investimento mais inteligente para seu negócio online.
+            </p>
+            <div class="glass-card-strong rounded-xl p-8 mb-8 inline-block">
+                <div class="text-5xl font-bold mb-2 accent-color">R$ 64,75</div>
+                <div class="text-lg text-gray-300" style="font-weight: 300;">por mês</div>
+                <div class="text-sm text-gray-400 mt-2" style="font-weight: 300;">ou R$ 777/ano (economia de 1 mês)</div>
+            </div>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20de%20assinatura" class="btn-accent text-xl hover-scale mb-4" target="_blank">
+                <i class="fas fa-arrow-right mr-2"></i>
+                Quero começar agora
+            </a>
+            <p class="mt-6 text-gray-400 text-sm" style="font-weight: 300;">
+                <i class="fas fa-lock mr-2 accent-color"></i>
+                Processo 100% seguro • Sem fidelidade • Cancele quando quiser • Garantia de 30 dias
+            </p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="section-dark text-gray-400 py-12">
+        <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-4" style="font-weight: 600;">Contato</h4>
+                    <ul class="space-y-2" style="font-weight: 300;">
+                        <li>
+                            <i class="fas fa-phone mr-2 accent-color"></i>
+                            <a href="tel:+5511999999999" class="hover:text-white transition-colors">(11) 99999-9999</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope mr-2 accent-color"></i>
+                            <a href="mailto:contato@seudominio.com.br" class="hover:text-white transition-colors">contato@seudominio.com.br</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp mr-2 accent-color"></i>
+                            <a href="https://wa.me/5511999999999" target="_blank" class="hover:text-white transition-colors">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4" style="font-weight: 600;">Informações</h4>
+                    <ul class="space-y-2" style="font-weight: 300;">
+                        <li><a href="#cta" class="hover:text-white transition-colors">Planos e Preços</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4" style="font-weight: 600;">Redes Sociais</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="mb-2" style="font-weight: 300;">
+                    &copy; 2024 - Todos os direitos reservados
+                </p>
+                <p class="text-xs text-gray-500" style="font-weight: 300;">
+                    Desenvolvido com dedicação para transformar sua presença digital
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para animações ao scroll -->
+    <script>
+        // Animação ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        // Smooth scroll para links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
